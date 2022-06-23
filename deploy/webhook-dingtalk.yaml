@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: dingtalk
-          image: 172.16.1.170/base-image/dingtalk:20200811 
+          image: 172.16.1.170/base-image/dingtalk:$tag
           ports:
           - containerPort: 9000
             name: port
@@ -28,7 +28,7 @@ metadata:
   labels:
     name: dingtalk
 spec:
-  type: NodePort
+  type: NodePort  #可不使用NodePort方式
   ports:
     - name: port
       port: 9000
@@ -47,7 +47,7 @@ metadata:
     traefik.frontend.rule.type: PathPrefixStrip     
 spec:
   rules:
-  - host: testdingtalk.shhzcj.com
+  - host: testdingtalk.***.com
     http:
       paths:
       - path: /
