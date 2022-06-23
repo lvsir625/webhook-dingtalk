@@ -17,7 +17,7 @@ func getBody(w http.ResponseWriter,r *http.Request) {
 	s1 := `{"msgtype":"text","text":{"content":`
 	s2 := `},"at": {
        "atMobiles": [
-           "13916201176",
+           "13916*****6",
        ],
        "isAtAll": false
     }`
@@ -26,7 +26,7 @@ func getBody(w http.ResponseWriter,r *http.Request) {
 	fmt.Println(s3)
 	fmt.Printf("%T\n",s3)
 	// 钉钉接口地址
-	url := "https://oapi.dingtalk.com/robot/send?access_token=d02cf44281b26ea0780537c8a9562b64b37c353201ab439839eaeda9029fc7b8"
+	url := "https://oapi.dingtalk.com/robot/send?access_token=*************************aeda9029fc7b8"
 	req,err := http.NewRequest("POST",url,strings.NewReader(s3))
 	req.Header.Add("content-type", "application/json")
 	if err != nil {
